@@ -226,207 +226,231 @@ function create_config( )
     "leave_ban",
     "admin"
     },
-    sudo_users = {110626080,103649648,143723991,111020322,0,tonumber(our_id)},--Sudo users
+    sudo_users = {112274576,80182995,132667916,134843111,159887854,185532812وtonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[Teleseed v2 - Open Source
-An advance Administration bot based on yagop/telegram-bot 
-
-https://github.com/SEEDTEAM/TeleSeed
-
+    about_text = [[datak v4 - Open Source
+    
 Our team!
-Alphonse (@Iwals)
-I M /-\ N (@Imandaneshi)
-Siyanew (@Siyanew)
-Rondoozle (@Potus)
-Seyedan (@Seyedan25)
-
-Special thanks to:
-Juan Potato
-Siyanew
-Topkecleon
-Vamptacus
+morteza (@mortezagh1185)
+hafez (@Thisishafez)
+mohammad (@XXXnfratXXX)
+sina (@Mrlife)
+sorblock (@sorblack)
+alireza (@alireza_PT)
 
 Our channels:
-English: @TeleSeedCH
-Persian: @IranSeed
+support: @datak_tg_1
 ]],
     help_text_realm = [[
 Realm Commands:
+راهنمای ریلم
 
 !creategroup [name]
-Create a group
+ساختن گروه
 
 !createrealm [name]
-Create a realm
+ساختن ریلم
 
-!setname [name]
-Set realm name
+!setname
+گذاشتن اسم گروه
 
-!setabout [group_id] [text]
-Set a group's about text
+!setname
+گذاشتن اسم برای گروه
 
-!setrules [grupo_id] [text]
-Set a group's rules
+!setrules
+گذاشتن قوانین برای گروه
 
-!lock [grupo_id] [setting]
-Lock a group's setting
+!setabout
+گذاشتن متن درباره برای سوپر گروه(این متن در بخش توضیحات گروه هم نمایش داده میشه)
 
-!unlock [grupo_id] [setting]
-Unock a group's setting
+!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
+قفل کردن لینک گروها-اسپم-متن و اسم های بزرگ -زبان فارسی-تعداد اعضا-کاراکتر های غیر عادی-استیکر-مخاطبین
+دقت کنید اگر گذینه اخری strict روشن باشد کاربر از گروه کیک میشود و پیغام پاک میشه در غیر این صورت فقط پیغام پاک میشود
+
+!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
+باز کردن قفل امکانات بالا
+*rtl: Delete msg if Right To Left Char. is in name*
+*strict: disable strict settings enforcement (violating user will not be kicked)*
 
 !wholist
-Get a list of members in group/realm
+لیست اعضا به صورت لیست
 
 !who
-Get a file of members in group/realm
+لیست اعضا بصورت فایل
 
 !type
-Get group type
+دیدن مدل گپ
 
 !kill chat [grupo_id]
-Kick all memebers and delete group
+حذف کردن گروه
 
 !kill realm [realm_id]
-Kick all members and delete realm
+حذف کردن ریلم
 
 !addadmin [id|username]
-Promote an admin by id OR username *Sudo only
-
+اضافه شدن مقام به ادمین ربات
 !removeadmin [id|username]
-Demote an admin by id OR username *Sudo only
+حذف مقام ادمین ربات
 
 !list groups
-Get a list of all groups
+لیست گروه های ساخته شده بصورت فایل
 
 !list realms
-Get a list of all realms
+لیست ریلم های ساخته شده بصورت فایل
 
 !log
-Get a logfile of current group or realm
+گرفتن لاگ فایل گروه
 
 !broadcast [text]
+فرستادن پیام به کل گروه های ساخته شده
 !broadcast Hello !
-Send text to all groups
-» Only sudo users can run this command
+مانند
 
 !bc [group_id] [text]
+پیام فرستادن به یک گروه از طریق ایدی
 !bc 123456789 Hello !
-This command will send text to [group_id]
+مثال
 
-» U can use both "/" and "!" 
-
-» Only mods, owner and admin can add bots in group
-
-» Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
-
-» Only owner can use res,setowner,promote,demote and log commands
-
+**You can use "#", "!", or "/" to begin all commands
+شما میتوانید هم از اسلش/مربع/علامت تعجب در اول دستورات استفاده کنید
+*Only owner can add members to SuperGroup
+(use invite link to invite)
+فقط ادمین ها میتونن اعضا به گروه ادد کنند در سوپر گروه(قانون تلگرام)
+*Only moderators and owner can use block, ban, unban, newlink, link, setphoto, setname, lock, unlock, setrules, setabout and settings commands
+فقط ناظم ها و خریدار ها میتوانند دستورات  بالا را اجرا کنند
+*Only owner can use res, setowner, promote, demote, and log commands
+فقط خریدار گروه میتواند دستورات بالا رو اجرا کند
 ]],
     help_text = [[
-Commands list :
+SuperGroup Commands:
+راهنمای سوپر گروه
 
-!kick [username|id]
-You can also do it by reply
+!info
+نمایش اطلاعات اصلی گروه
 
-!ban [ username|id]
-You can also do it by reply
-
-!unban [id]
-You can also do it by reply
-
-!who
-Members list
-
-!modlist
-Moderators list
-
-!promote [username]
-Promote someone
-
-!demote [username]
-Demote someone
-
-!kickme
-Will kick user
-
-!about
-Group description
-
-!setphoto
-Set and locks group photo
-
-!setname [name]
-Set group name
-
-!rules
-Group rules
-
-!id
-Return group id or user id
-
-!help
-Get commands list
-
-!lock [member|name|bots|leave] 
-Locks [member|name|bots|leaveing] 
-
-!unlock [member|name|bots|leave]
-Unlocks [member|name|bots|leaving]
-
-!set rules [text]
-Set [text] as rules
-
-!set about [text]
-Set [text] as about
-
-!settings
-Returns group settings
-
-!newlink
-Create/revoke your group link
-
-!link
-Returns group link
+!admins
+نمایش لیست ادمین های گروه
 
 !owner
-Returns group owner id
+نمایش خریدار گروه
 
-!setowner [id]
-Will set id as owner
+!modlist
+نمایش لیست ناظم ها
 
-!setflood [value]
-Set [value] as flood sensitivity
+!bots
+لیست روبات های گروه
 
-!stats
-Simple message statistics
+!who
+لیست اعضای گروه در یک فایل متنی
 
-!save [value] [text]
-Save [text] as [value]
+!block
+بلاک کردن و کیک کردن فرد
+
+!id
+نمایش ایدی گروه
+*For userID's: !id @username or reply !id*
+
+!id from
+نمایش اطلاعات فردی که پیغام رو فوارد کرده
+
+!kickme
+کیک شدن از سوپر گروه
+*Must be unblocked by owner or use join by pm to return*
+
+!setowner
+ست کردن کاربر به عنوان خریدار گروه
+
+!promote [username|id]
+اضافه کردن کاربر به لیست ناظم ها
+
+!demote [username|id]
+پاک کردن کاربر از لیست ناظم ها
+
+!setname
+گذاشتن اسم گروه
+
+!setphoto
+گذاشتن عکس برای گروه
+
+!setrules
+گذاشتن قوانین برای گروه
+
+!setabout
+گذاشتن متن درباره برای سوپر گروه(این متن در بخش توضیحات گروه هم نمایش داده میشه)
+
+!save [value] <text>
+ذخیره کردن یک متن
 
 !get [value]
-Returns text of [value]
+گرفتن متن
 
-!clean [modlist|rules|about]
-Will clear [modlist|rules|about] and set it to nil
+!newlink
+ساختن لینک جدید
+
+!link
+گرفتن لینک
+
+!rules
+نمایش قوانین
+
+!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
+
+قفل کردن لینک گروها-اسپم-متن و اسم های بزرگ -زبان فارسی-تعداد اعضا-کاراکتر های غیر عادی-استیکر-مخاطبین
+دقت کنید اگر گذینه اخری strict روشن باشد کاربر از گروه کیک میشود و پیغام پاک میشه در غیر این صورت فقط پیغام پاک میشود
+
+!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
+باز کردن قفل امکانات بالا
+*rtl: Delete msg if Right To Left Char. is in name*
+*strict: disable strict settings enforcement (violating user will not be kicked)*
+
+!mute [all|audio|gifs|photo|video]
+پاک کردن سریع همه پیغام ها-عکس ها-گیف ها-صدا های ضبط شده-فیلم
+
+!unmute [all|audio|gifs|photo|video]
+باز کردن قفل امکانات بالا
+
+!setflood [value]
+گذاشتن value به عنوان حساسیت اسپم
+
+!settings
+نمایش تنظیمات گروه
+
+!muteslist
+نمایش نوع پیغام های سایلنت شده
+*A "muted" message type is auto-deleted if posted
+
+!muteuser [username]
+سایلنت کردن یک کاربر خاص در گروه
+فقط خریدار میتونه کسیو سایلنت کنه ولی ناظم ها میتونند فرد را از سایلنتی در بیاورند
+
+!mutelist
+نمایش لیست افراد سایلنت شده
+
+!clean [rules|about|modlist|mutelist]
+پاک کردن لیست ناظم ها-درباره-لیست سایلنت شده ها-قوانین
+
+
+!public [yes|no]
+نمایش گروه شما در لیست گروها
 
 !res [username]
-Returns user id
+گرفتن اطلاعت یوزر نیم داده شد
+
 
 !log
-Will return group logs
+برگرداندن تاریخچه گروه در یک فایل متنی
 
-!banlist
-Will return group ban list
 
-» U can use both "/" and "!" 
-
-» Only mods, owner and admin can add bots in group
-
-» Only moderators and owner can use kick,ban,unban,newlink,link,setphoto,setname,lock,unlock,set rules,set about and settings commands
-
-» Only owner can use res,setowner,promote,demote and log commands
-
+**You can use "#", "!", or "/" to begin all commands
+شما میتوانید هم از اسلش/مربع/علامت تعجب در اول دستورات استفاده کنید
+*Only owner can add members to SuperGroup
+(use invite link to invite)
+فقط ادمین ها میتونن اعضا به گروه ادد کنند در سوپر گروه(قانون تلگرام)
+*Only moderators and owner can use block, ban, unban, newlink, link, setphoto, setname, lock, unlock, setrules, setabout and settings commands
+فقط ناظم ها و خریدار ها میتوانند دستورات  بالا را اجرا کنند
+*Only owner can use res, setowner, promote, demote, and log commands
+فقط خریدار گروه میتواند دستورات بالا رو اجرا کند
 ]]
   }
   serialize_to_file(config, './data/config.lua')
