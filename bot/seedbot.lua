@@ -264,14 +264,11 @@ Realm Commands:
 !setabout
 گذاشتن متن درباره برای سوپر گروه(این متن در بخش توضیحات گروه هم نمایش داده میشه)
 
-!lock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
-قفل کردن لینک گروها-اسپم-متن و اسم های بزرگ -زبان فارسی-تعداد اعضا-کاراکتر های غیر عادی-استیکر-مخاطبین
-دقت کنید اگر گذینه اخری strict روشن باشد کاربر از گروه کیک میشود و پیغام پاک میشه در غیر این صورت فقط پیغام پاک میشود
+!lock [flood|arabic|member|photo|name|leave|bot]
+قفل کردن امکانات بالا
 
-!unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
+!unlock [flood|arabic|member|photo|name|leave|bot]
 باز کردن قفل امکانات بالا
-*rtl: Delete msg if Right To Left Char. is in name*
-*strict: disable strict settings enforcement (violating user will not be kicked)*
 
 !wholist
 لیست اعضا به صورت لیست
