@@ -232,7 +232,7 @@ function create_config( )
 	"whitelist",
 	"msg_checks"
     },
-    sudo_users = {112274576,80182995,132667916,134843111,159887854,185532812وtonumber(our_id)},--Sudo users
+    sudo_users = {112274576,80182995,132667916,134843111,159887854,185532812,tonumber(our_id)},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
     about_text = [[datak v4 - Open Source
