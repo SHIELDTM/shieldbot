@@ -455,7 +455,7 @@ SuperGroup Commands:
 *Only owner can use res, setowner, promote, demote, and log commands
 فقط خریدار گروه میتواند دستورات بالا رو اجرا کند
 
-]],
+]]
   }
   serialize_to_file(config, './data/config.lua')
   print('saved config into ./data/config.lua')
