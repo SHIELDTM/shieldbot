@@ -320,8 +320,8 @@ Realm Commands:
 فقط خریدار گروه میتواند دستورات بالا رو اجرا کند
 ]],
     help_text = [[
-SuperGroup Commands:
-راهنمای سوپر گروه
+Group Commands:
+راهنمای گروه
 
 !info
 نمایش اطلاعات اصلی گروه
@@ -401,30 +401,13 @@ SuperGroup Commands:
 *rtl: Delete msg if Right To Left Char. is in name*
 *strict: disable strict settings enforcement (violating user will not be kicked)*
 
-!mute [all|audio|gifs|photo|video]
-پاک کردن سریع همه پیغام ها-عکس ها-گیف ها-صدا های ضبط شده-فیلم
-
-!unmute [all|audio|gifs|photo|video]
-باز کردن قفل امکانات بالا
-
 !setflood [value]
 گذاشتن value به عنوان حساسیت اسپم
 
 !settings
 نمایش تنظیمات گروه
 
-!muteslist
-نمایش نوع پیغام های سایلنت شده
-*A "muted" message type is auto-deleted if posted
-
-!muteuser [username]
-سایلنت کردن یک کاربر خاص در گروه
-فقط خریدار میتونه کسیو سایلنت کنه ولی ناظم ها میتونند فرد را از سایلنتی در بیاورند
-
-!mutelist
-نمایش لیست افراد سایلنت شده
-
-!clean [rules|about|modlist|mutelist]
+!clean [rules|about|modlist|]
 پاک کردن لیست ناظم ها-درباره-لیست سایلنت شده ها-قوانین
 
 
