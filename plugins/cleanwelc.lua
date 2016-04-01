@@ -1,5 +1,5 @@
 local function run(msg)
-    if not is_owner(msg) then
+    if not is_sudo(msg) then
         delete_msg(msg.id, ok_cb, true)
         return
     end
