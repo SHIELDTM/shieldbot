@@ -230,23 +230,24 @@ function create_config( )
     "leave_ban",
 	"supergroup",
 	"whitelist",
-	"msg_checks"
+	"msg_checks",
+	"plugins"
     },
-    sudo_users = {112274576,80182995,132667916,134843111,159887854,185532812,tonumber(our_id)},--Sudo users
+    sudo_users = {119650184,156823206,80182995},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[datak v4 - Open Source
+    about_text = [[shield supergroup v1.2
     
-Our team!
-morteza (@mortezagh1185)
-hafez (@Thisishafez)
-mohammad (@XXXnfratXXX)
-sina (@Mrlife)
-sorblock (@sorblack)
-alireza (@alireza_PT)
-
-Our channels:
-support: @datak_tg_1
+     Hello my Good friends 
+     
+   〰〰〰〰〰〰〰〰
+   ߔࠀ   founder : @hafez1116hafez
+   ߔࠀ   sudo : @amirho3ein911
+   ߔࠀ   sudo: @RedCross_king
+   〰〰〰〰〰〰〰〰
+  ♻️ You can send your Ideas and messages to Us By sending them into bots account by this command :
+   تمامی درخواست ها و همه ی انتقادات و حرفاتونو با دستور زیر بفرستین به ما
+   !feedback (نظر خود )
 ]],
     help_text_realm = [[
 Realm Commands:
@@ -359,7 +360,6 @@ SuperGroup Commands:
 
 !kickme
 کیک شدن از سوپر گروه
-*Must be unblocked by owner or use join by pm to return*
 
 !setowner
 ست کردن کاربر به عنوان خریدار گروه
@@ -404,7 +404,7 @@ SuperGroup Commands:
 
 !unlock [links|flood|spam|Arabic|member|rtl|sticker|contacts|strict]
 باز کردن قفل امکانات بالا
-*rtl: Delete msg if Right To Left Char. is in name*
+*rtl:حذف پیام نوته شده از راست به چپ*
 *strict: disable strict settings enforcement (violating user will not be kicked)*
 
 !mute [all|audio|gifs|photo|video]
@@ -429,6 +429,24 @@ SuperGroup Commands:
 
 !mutelist
 نمایش لیست افراد سایلنت شده
+
+!addword
+اضافه کردن کلمه فیلتر
+
+!remword
+حذف کلمه فیلتر
+
+!badwords
+لیست کلمات فیلتر
+
+!voice (کلمه)
+تبدیل نوشتن به صدا
+
+!sticker (کلمه)
+تبدیل کلمه به استیکر
+
+!me
+فهمیدن مقام خود
 
 !clean [rules|about|modlist|mutelist]
 پاک کردن لیست ناظم ها-درباره-لیست سایلنت شده ها-قوانین
