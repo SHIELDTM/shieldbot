@@ -315,15 +315,11 @@ Realm Commands:
 پیام فرستادن به یک گروه از طریق ایدی
 !bc 123456789 Hello !
 مثال
-
-**You can use "#", "!", or "/" to begin all commands
+-----------
 شما میتوانید هم از اسلش/مربع/علامت تعجب در اول دستورات استفاده کنید
-*Only owner can add members to SuperGroup
 (use invite link to invite)
 فقط ادمین ها میتونن اعضا به گروه ادد کنند در سوپر گروه(قانون تلگرام)
-*Only moderators and owner can use block, ban, unban, newlink, link, setphoto, setname, lock, unlock, setrules, setabout and settings commands
 فقط ناظم ها و خریدار ها میتوانند دستورات  بالا را اجرا کنند
-*Only owner can use res, setowner, promote, demote, and log commands
 فقط خریدار گروه میتواند دستورات بالا رو اجرا کند
 ]],
     help_text_super =[[
