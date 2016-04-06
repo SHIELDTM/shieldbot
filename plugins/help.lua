@@ -367,11 +367,11 @@ local mods = [[
      
     if is_sudo(msg) then 
         return sudo
-    elseif is_admin(msg) then 
+    if is_admin(msg) then 
         return admin 
-    elseif is_owner(msg) then 
+    if is_owner(msg) then 
         return owner
-    elseif is_momod(msg) then 
+    if is_momod(msg) then 
          return mods
     else 
         return member
