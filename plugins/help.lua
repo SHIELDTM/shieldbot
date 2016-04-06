@@ -5,7 +5,7 @@ function run(msg, matches)
 local mods = [[ 
 راهنمای مدیر 
 
-!info
+!gpinfo
 نمایش اطلاعات اصلی گروه
 
 !admins
@@ -185,7 +185,7 @@ local mods = [[
  
  local owner = [[
  راهنمای مدیر کل
-!info
+!gpinfo
 نمایش اطلاعات اصلی گروه
 
 !admins
@@ -362,11 +362,7 @@ local mods = [[
  ]]
  
  local sudo = [[
- مثلا سودویی همه کارا می تونی دستور یادت رفته یکیش بزن
- !help member
- !help mod
- !help owner
- !help admin
+ مثلا سودویی همه کارا می تونی 
  ]]
  
  if msg.to.type == 'channel' and matches[1]:lower() == 'help' and matches[2] == nil then 
