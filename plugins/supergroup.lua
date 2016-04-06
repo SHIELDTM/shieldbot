@@ -1926,9 +1926,14 @@ local function run(msg, matches)
 				muteuser = get_message(msg.reply_id, get_message_callback, {receiver = receiver, get_cmd = get_cmd, msg = msg})
 			elseif matches[1] == "silent" and string.match(matches[2], '^%d+$') then
 				local user_id = matches[2]
+				if is_muted_user(chat_id, user_id) then
+					unmute_user(chat_id, user_id)
+					savelog(msg.to.id, name_log.." ["..msg.from.id.."] removed ["..user_id.."] from the muted users list")
+					return "["..user_id.."] removed from the silent users list"
+				elseif is_owner(msg) then
 					mute_user(chat_id, user_id)
 					savelog(msg.to.id, name_log.." ["..msg.from.id.."] added ["..user_id.."] to the muted users list")
-					return "["..user_id.."] added to the muted user list"
+					return "["..user_id.."] added to the silent user list"
 				end
 			elseif matches[1] == "silent" and not string.match(matches[2], '^%d+$') then
 				local receiver = get_receiver(msg)
@@ -1939,30 +1944,6 @@ local function run(msg, matches)
 			end
          	end
 
-	if matches[1] == "unsilent" and is_momod(msg) then
-			local chat_id = msg.to.id
-			local hash = "mute_user"..chat_id
-			local user_id = ""
-			if type(msg.reply_id) ~= "nil" then
-				local receiver = get_receiver(msg)
-				local get_cmd = "mute_user"
-				muteuser = get_message(msg.reply_id, get_message_callback, {receiver = receiver, get_cmd = get_cmd, msg = msg})
-			elseif matches[1] == "unsilent" and string.match(matches[2], '^%d+$') then
-				local user_id = matches[2]
-				if is_muted_user(chat_id, user_id) then
-					unmute_user(chat_id, user_id)
-					savelog(msg.to.id, name_log.." ["..msg.from.id.."] removed ["..user_id.."] from the muted users list")
-					return "["..user_id.."] removed from the muted users list"
-				end
-			elseif matches[1] == "unsilent" and not string.match(matches[2], '^%d+$') then
-				local receiver = get_receiver(msg)
-				local get_cmd = "mute_user"
-				local username = matches[2]
-				local username = string.gsub(matches[2], '@', '')
-				resolve_username(username, callbackres, {receiver = receiver, get_cmd = get_cmd, msg=msg})
-			end
-        	end
- 	
 		if matches[1] == "muteslist" and is_momod(msg) then
 			local chat_id = msg.to.id
 			if not has_mutes(chat_id) then
