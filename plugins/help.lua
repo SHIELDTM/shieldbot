@@ -26,6 +26,9 @@ local mods = [[
 !block
 بلاک کردن و کیک کردن فرد
 
+!kick
+کیک کردن فرد
+
 !id
 نمایش ایدی گروه
 *For userID's: !id @username or reply !id*
@@ -88,10 +91,8 @@ local mods = [[
 *A "muted" message type is auto-deleted if posted
 
 !silent [username]
-سایلنت کردن یک کاربر خاص در گروه
-
-!unsilent [username]
-در اوردن شخصی از سایلنت
+سایلنت کردن شخصی
+*برای در اوردن دوباره روی ان دستور را بزنید*
 
 !silentlist
 نمایش لیست افراد سایلنت شده
@@ -278,10 +279,7 @@ local mods = [[
 
 !silent [username]
 سایلنت کردن یک کاربر خاص در گروه
-فقط خریدار میتونه کسیو سایلنت کنه ولی ناظم ها میتونند فرد را از سایلنتی در بیاورند
-
-!unsilent [username]
-در اوردن شخصی از سایلنت
+*برای در اوردن دوباره روی ان دستور را بزنید*
 
 !silentlist
 نمایش لیست افراد سایلنت شده
@@ -403,6 +401,7 @@ return {
  
   patterns = {
     "^[!/#]([Hh]elp)$",
+    
 	"^[!/#]([Hh]elp) (mod)$",
 	"^[!/#]([Hh]elp) (owner)$",
 	"^[!/#]([Hh]elp) (member)$",
