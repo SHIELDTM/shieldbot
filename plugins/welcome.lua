@@ -88,7 +88,7 @@ local function run(msg, matches)
       description_rules(msg, nama)
    elseif matches[1] == "chat_del_user" then
        local bye_name = "@"..msg.action.user.username
-       return 'goodbye"..bye_name.."☻' 
+       return 'goodbye '..bye_name..'☻' 
    end
 end
 
