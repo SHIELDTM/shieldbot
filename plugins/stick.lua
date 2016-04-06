@@ -8,22 +8,20 @@ do local function run(msg, matches) local text = matches[1]
   if msg.to.type == 'user' then
       return nil
       else
-  local url = "http://latex.codecogs.com/png.download?".."\\dpi{800}%20\\LARGE%20"..matches[1]
+  local url = 
+"http://latex.codecogs.com/png.download?".."\\dpi{800}%20\\LARGE%20"..textc
   local receiver = get_receiver(msg)
   local file = download_to_file(url,'text.webp')
-      send_document('channel#id'..msg.to.id, file, ok_cb , false)
+      send_document('channel#id'..msg.to.id, file, ok_cb , false) end 
 end
-
-return {
-  description = "text to sticker",
+  end return {
+  description = "text to voice",
   usage = {
-    "!sticker [text]"
+    "!voice [text]"
   },
   patterns = {
-    "^[!/#]sticker (.+)$"
+    "^[!/#]sticker +(.*)$",
   },
   run = run
 }
-
 end
-
