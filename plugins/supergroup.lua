@@ -200,7 +200,7 @@ local function unlock_group_links(msg, data, target)
   end
 end
 
-local function lock_group_welc(msg, data, target)
+--[[local function lock_group_welc(msg, data, target)
   if not is_momod(msg) then
     return
   end
@@ -226,7 +226,7 @@ local function unlock_group_welc(msg, data, target)
     save_data(_config.moderation.data, data)
     return 'join and left pm clean = no'
   end
-end
+end]]
 
 local function lock_group_spam(msg, data, target)
   if not is_momod(msg) then
@@ -554,7 +554,7 @@ function show_supergroup_settingsmod(msg, target)
 		end
 	end
   local settings = data[tostring(target)]['settings']
-  local text = "SuperGroup settings:\n________________\n>Lock links : "..settings.lock_link.."\n>Lock flood: "..settings.flood.."\n>Flood sensitivity : "..NUM_MSG_MAX.."\n>Lock spam: "..settings.lock_spam.."\n>Lock Arabic: "..settings.lock_arabic.."\n>Lock Member: "..settings.lock_member.."\n>Lock RTL: "..settings.lock_rtl.."\n>Lock sticker: "..settings.lock_sticker.."\n>Public: "..settings.public.."\n>Strict settings: "..settings.strict.."\n>clean join-welc: "..settings.lock_welc.."\n________________\n>>bot version : v1.5<<\n>>>MeGa shield<<<\n>>@shieldTM<<"
+  local text = "SuperGroup settings:\n________________\n>Lock links : "..settings.lock_link.."\n>Lock flood: "..settings.flood.."\n>Flood sensitivity : "..NUM_MSG_MAX.."\n>Lock spam: "..settings.lock_spam.."\n>Lock Arabic: "..settings.lock_arabic.."\n>Lock Member: "..settings.lock_member.."\n>Lock RTL: "..settings.lock_rtl.."\n>Lock sticker: "..settings.lock_sticker.."\n>Public: "..settings.public.."\n>Strict settings: "..settings.strict.."\n________________\n>>bot version : v1.5<<\n>>>MeGa shield<<<\n>>@shieldTM<<"
   return text
 end
 
@@ -1639,10 +1639,10 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked link posting ")
 				return lock_group_links(msg, data, target)
 			end
-			if matches[2] == 'welcome' then
+			--[[if matches[2] == 'welcome' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked welc-left pm ")
 				return lock_group_welc(msg, data, target)
-			end
+			end]]
 			if matches[2] == 'spam' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked spam ")
 				return lock_group_spam(msg, data, target)
@@ -1683,10 +1683,10 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked link posting")
 				return unlock_group_links(msg, data, target)
 			end
-	        	if matches[2] == 'welcome' then
+	        	--[[if matches[2] == 'welcome' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked welc-left pm")
 				return unlock_group_welc(msg, data, target)
-			end
+			end]]
 			if matches[2] == 'spam' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked spam")
 				return unlock_group_spam(msg, data, target)
