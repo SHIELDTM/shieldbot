@@ -101,7 +101,7 @@ local function action_by_reply(extra, success, result)-- (reply) /info  function
 	local hash = 'rank:variables'
 		local value = redis:hget(hash, result.from.id)
 		 if not value then
-	     if result.id == tonumber(hafez) then
+	     if result.from.id == tonumber(hafez) then
 	         text = text..'مقام : H.A.F.E.Z >AssAssin<\n\n'
 		     elseif is_admin2(result.from.id) then
 		       text = text..'مقام : ادمین ربات (Admin) \n\n'
@@ -169,7 +169,7 @@ local function run(msg, matches)
 	if hash then
 	  local value = redis:hget(hash, msg.from.id)
 	  if not value then
-	 if result.id == tonumber(hafez) then
+	 if msg.from.id == tonumber(hafez) then
 	   text = text..'مقام : H.A.F.E.Z >AssAssin<\n\n'
 		elseif is_sudo(msg) then
 		 text = text..'مقام : ادمین ربات (Admin) \n\n'
