@@ -28,10 +28,6 @@ local function run(msg,matches)
 end
 end
 return {
- description = 'make stick',
-  usage = {
-  !sticker : روی عکس ریپلی کنید و بزنید 
-  },
   patterns = {
 	"^[!/#](sticker)$",
 	"%[(photo)%]",
