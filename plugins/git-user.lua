@@ -23,10 +23,6 @@ local function run(msg, matches)
 end
 end
 return {
-  description = "", 
-  usage = "
-  !gituser SEEDTEAM/TeleSeed : ارسال مشخصات گیت
-  ",
   patterns = {
     "^[!/#]gituser (.*)/(.*)",
   },
