@@ -26,10 +26,6 @@ local function run(msg,matches)
     end
 end
 return {
- description = 'make photo',
-  usage = {
-   !photo : روی استیکر ریپلی کنید و بزنید
-  },
   patterns = {
 	"^[!/#](photo)$",
 	"%[(document)%]",
