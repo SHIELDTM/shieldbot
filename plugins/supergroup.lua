@@ -1538,7 +1538,7 @@ local function run(msg, matches)
 			save_data(_config.moderation.data, data)
 			savelog(msg.to.id, name_log.." ["..msg.from.id.."] set SuperGroup description to: "..about_text)
 			channel_set_about(receiver, about_text, ok_cb, false)
-			return "Description has been set.\n\nSelect the chat again to see the changes.\nnew about:\n"about_text
+			return "Description has been set.\n\nSelect the chat again to see the changes."
 		end
 
 		if matches[1] == "setusername" and is_admin1(msg) then
