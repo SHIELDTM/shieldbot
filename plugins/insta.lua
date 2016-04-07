@@ -39,11 +39,11 @@ local function instagramUser(msg, query)
 		text = text.."Website: "..user.data.website.."\n"
 	end
 	text = text.."\n@shieldTM"
-	--local file_path = download_to_file(user.data.profile_picture,"insta.png")     -- disable this line if you want to send profile photo as sticker
+	local file_path = download_to_file(user.data.profile_picture,"insta.png")     -- disable this line if you want to send profile photo as sticker
 	local file_path = download_to_file(user.data.profile_picture,"insta.webp")    -- enable this line if you want to send profile photo as sticker
 	local cb_extra = {file_path=file_path}
     local mime_type = mimetype.get_content_type_no_sub(ext)
-	--send_photo(receiver, file_path, rmtmp_cb, cb_extra)  -- disable this line if you want to send profile photo as sticker
+	send_photo(receiver, file_path, rmtmp_cb, cb_extra)  -- disable this line if you want to send profile photo as sticker
 	send_document(receiver, file_path, rmtmp_cb, cb_extra)  -- enable this line if you want to send profile photo as sticker
 	send_msg(receiver,text,ok_cb,false)
 end
