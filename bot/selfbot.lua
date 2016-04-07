@@ -233,17 +233,15 @@ function create_config( )
 	"msg_checks",
 	"plugins"
     },
-    sudo_users = {119650184,156823206,80182995},--Sudo users
+    sudo_users = {80182995},--Sudo users
     disabled_channels = {},
     moderation = {data = 'data/moderation.json'},
-    about_text = [[shield supergroup v1.2
+    about_text = [[shield-selfbot supergroup v1.2
     
      Hello my Good friends 
      
    〰〰〰〰〰〰〰〰
    ߔࠀ   founder : @hafez1116hafez
-   ߔࠀ   sudo : @amirho3ein911
-   ߔࠀ   sudo: @RedCross_king
    〰〰〰〰〰〰〰〰
   ♻️ You can send your Ideas and messages to Us By sending them into bots account by this command :
    تمامی درخواست ها و همه ی انتقادات و حرفاتونو با دستور زیر بفرستین به ما
