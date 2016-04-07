@@ -222,10 +222,10 @@ return {
 	'(Reply)!setrank <rank>: عوض کردن رنک ممبر',
   },
   patterns = {
-	"^[/!]([Ii][Nn][Ff][Oo])$",
-	"^[/!]([Ii][Nn][Ff][Oo]) (.*)$",
-	"^[/!]([Ss][Ee][Tt][Rr][Aa][Nn][Kk]) (%d+) (.*)$",
-	"^[/!]([Ss][Ee][Tt][Rr][Aa][Nn][Kk]) (.*)$",
+	"^[/!#]([Ii][Nn][Ff][Oo])$",
+	"^[/!#]([Ii][Nn][Ff][Oo]) (.*)$",
+	"^[/!#]([Ss][Ee][Tt][Rr][Aa][Nn][Kk]) (%d+) (.*)$",
+	"^[/!#]([Ss][Ee][Tt][Rr][Aa][Nn][Kk]) (.*)$",
   },
   run = run
 }
