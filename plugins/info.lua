@@ -169,7 +169,7 @@ local function run(msg, matches)
 	if hash then
 	  local value = redis:hget(hash, msg.from.id)
 	  if not value then
-			 if result.id == tonumber(hafez) then
+	 if result.id == tonumber(hafez) then
 	   text = text..'مقام : H.A.F.E.Z >AssAssin<\n\n'
 		elseif is_sudo(msg) then
 		 text = text..'مقام : ادمین ربات (Admin) \n\n'
