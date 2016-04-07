@@ -27,7 +27,7 @@ local function list_all_plugins(only_enabled)
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  😎👑 enabled, 😐🔫 disabled
-    local status = '😐🔫'
+    local status = '😡🔫'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
@@ -52,7 +52,7 @@ local function list_plugins(only_enabled)
   local nsum = 0
   for k, v in pairs( plugins_names( )) do
     --  😎👑 enabled, 😐🔫 disabled
-    local status = '😐🔫'
+    local status = '😡🔫'
     nsum = nsum+1
     nact = 0
     -- Check if is enabled
