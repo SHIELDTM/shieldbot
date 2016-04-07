@@ -66,13 +66,11 @@ local mods = [[
 !rules
 نمایش قوانین
 
-!lock [links|flood|spam|Arabic|member|english|sticker|contacts|add-rem-pm]
+!lock [links|flood|spam|Arabic|member|english|sticker|contacts|strict|tgservice]
 قفل کردن لینک گروها-اسپم-متن و اسم های بزرگ -زبان فارسی-تعداد اعضا-کاراکتر های غیر عادی-استیکر-مخاطبین
-*دقت کنید اگر گذینه اخری add-rem-pm روشن باشد کاربر از گروه کیک میشود و پیغام پاک میشه در غیر این صورت فقط پیغام پاک میشود*
 
-!unlock [links|flood|spam|Arabic|member|english|sticker|contacts|add-rem-pm]
+!unlock [links|flood|spam|Arabic|member|english|sticker|contacts|strict|tgservice]
 باز کردن قفل امکانات بالا
-*add-rem-pm: disable strict settings enforcement (violating user will not be kicked)*
 
 !mute [all|audio|gifs|photo|video]
 پاک کردن سریع همه پیغام ها-عکس ها-گیف ها-صدا های ضبط شده-فیلم
@@ -90,9 +88,11 @@ local mods = [[
 نمایش نوع پیغام های سایلنت شده
 *A "muted" message type is auto-deleted if posted
 
-!silent [username]
+!silent [reply|username|id]
 سایلنت کردن شخصی
-*برای در اوردن دوباره روی ان دستور را بزنید*
+
+!unsilent [reply|username|id]
+در اوردن از سایلنت
 
 !silentlist
 نمایش لیست افراد سایلنت شده
@@ -253,13 +253,11 @@ local mods = [[
 !rules
 نمایش قوانین
 
-!lock [links|flood|spam|Arabic|member|english|sticker|contacts|add-rem-pm]
+!lock [links|flood|spam|Arabic|member|english|sticker|contacts|strict|tgservice]
 قفل کردن لینک گروها-اسپم-متن و اسم های بزرگ -زبان فارسی-تعداد اعضا-کاراکتر های غیر عادی-استیکر-مخاطبین
-*دقت کنید اگر گذینه اخری add-rem-pm روشن باشد کاربر از گروه کیک میشود و پیغام پاک میشه در غیر این صورت فقط پیغام پاک میشود*
 
-!unlock [links|flood|spam|Arabic|member|english|sticker|contacts|add-rem-pm]
+!unlock [links|flood|spam|Arabic|member|english|sticker|contacts|strict|tgservice]
 باز کردن قفل امکانات بالا
-*add-rem-pm: disable strict settings enforcement (violating user will not be kicked)*
 
 !mute [all|audio|gifs|photo|video]
 پاک کردن سریع همه پیغام ها-عکس ها-گیف ها-صدا های ضبط شده-فیلم
@@ -279,7 +277,9 @@ local mods = [[
 
 !silent [username]
 سایلنت کردن یک کاربر خاص در گروه
-*برای در اوردن دوباره روی ان دستور را بزنید*
+
+!unsilent [reply|username|id]
+در اوردن از سایلنت
 
 !silentlist
 نمایش لیست افراد سایلنت شده
@@ -317,7 +317,7 @@ local mods = [[
 !setadmin
 ادمین کردن در گروه
 
-!remadmin
+!demoteadmin
 در اوردن از ادمینی
  ]]
  
