@@ -15,10 +15,6 @@ local function run(msg, matches)
 end
 end
 return {
-  description = "", 
-  usage = "
-  !git : ارسال اطلاعات اکانت گیتهاب
-  ",
   patterns = {
     "^[!/#]git (.*)",
   },
