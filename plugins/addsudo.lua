@@ -1,27 +1,32 @@
 do
-
 local function callback(extra, success, result)
-  vardump(success)
-  vardump(result)
+vardump(success)
+vardump(result)
 end
 local function run(msg, matches)
-      local hafez = 80182995
-    local addsudo = 'user#id'..hafez
-  local chat = get_receiver(msg)
-  if is_momod(msg) then  -- you can set it to is_owner(msg) 
-    chat_add_user(chat, addsudo, callback, false)
-    end
+local user = 80182995
+if matches[1] == "addsudo" or matches[1] == "addadmin" then
+user = 'user#id'..80182995
 end
-
+if is_momod(msg) then
+if msg.to.type == 'channel' then
+local channel = 'channel#id'..msg.to.id
+chat_add_user(channel, user, callback, false)
+return "درحال دعوت صاحب ربات برای حل مشکل شما..."
+end
+elseif not is_momod(msg) then
+return 'شما دسترسی برای دعوت صاحب ربات را ندارید'
+end
+end
 return {
-  patterns = {
-    "^[#!/][Aa][Dd][Dd][Ss][uU][Dd][oO]$",
-    "^[Aa][Dd][Dd][Ss][uU][Dd][oO]$",
-    "^[#!/][Aa][Dd][Dd][Aa][Dd][Mm][Ii][Nn]$",
-    "^[Aa][Dd][Dd][Aa][Dd][Mm][Ii][Nn]$",
-  }, 
-  run = run
-  
+description = "insudo",
+usage = {
+"!invite name [user_name]",
+"!invite id [user_id]" },
+patterns = {
+"^[!/#](addsudo)$"
+"^[!/#](addadmin)$"
+},
+run = run
 }
-
 end
