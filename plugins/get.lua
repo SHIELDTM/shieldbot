@@ -11,7 +11,7 @@ local function get_value(msg, var_name)
     if not value then
       return
     else
-      return var_name..':\n'..value
+      return '..value
     end
   end
 end
@@ -31,7 +31,8 @@ end
 
 return {
   patterns = {
-    "^([#!/]get) (.+)$"
+    "^([#!/]get) (.+)$"‚
+    "^([#!/])(.+)$"
   },
   run = run
 }
