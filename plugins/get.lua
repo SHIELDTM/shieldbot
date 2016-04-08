@@ -11,7 +11,7 @@ local function get_value(msg, var_name)
     if not value then
       return
     else
-      return '..value
+      return '\n'..value
     end
   end
 end
