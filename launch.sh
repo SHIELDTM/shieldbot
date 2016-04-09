@@ -111,6 +111,13 @@ else
     exit 1
   fi
   while true; do
+   echo -e "\033[38;5;208m"
+   echo -e " ____       "
+   echo -e " |          "
+   echo -e " |____      "
+   echo -e "      |     " 
+   echo -e "  ___ |     "
+   echo -e "                                      ‌‌ ‌         \033[0;00m"
    rm -r ../.telegram-cli/state
    ./tg/bin/telegram-cli -k ./tg/tg-server.pub -s ./bot/shieldTM.lua -l 1 -E $@
    sleep 3
