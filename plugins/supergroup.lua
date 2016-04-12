@@ -288,33 +288,6 @@ local function unlock_group_arabic(msg, data, target)
   end
 end
 
---[[local function lock_group_english(msg, data, target)
-  if not is_momod(msg) then
-    return
-  end
-  local group_english_lock = data[tostring(target)]['settings']['antien']
-  if group_english_lock == 'yes' then
-    return 'english is already locked'
-  else
-    data[tostring(target)]['settings']['antien'] = 'yes'
-    save_data(_config.moderation.data, data)
-    return 'english has been locked'
-  end
-end
-
-local function unlock_group_english(msg, data, target)
-  if not is_momod(msg) then
-    return
-  end
-  local group_english_lock = data[tostring(target)]['settings']['antien']
-  if group_english_lock == 'no' then
-    return 'english is already unlocked'
-  else
-    data[tostring(target)]['settings']['antien'] = 'no'
-    save_data(_config.moderation.data, data)
-    return 'english has been unlocked'
-  end
-end]]
 
 local function lock_group_membermod(msg, data, target)
   if not is_momod(msg) then
@@ -577,12 +550,6 @@ function show_supergroup_settingsmod(msg, target)
 			data[tostring(target)]['settings']['lock_tgservice'] = 'no'
 		end
 	end
-
-     --[[ if data[tostring(target)]['settings'] then
-		if not data[tostring(target)]['settings']['antien'] then
-			data[tostring(target)]['settings']['antien'] = 'no'
-		end
-	end]]
 	if data[tostring(target)]['settings'] then
 		if not data[tostring(target)]['settings']['lock_member'] then
 			data[tostring(target)]['settings']['lock_member'] = 'no'
@@ -1691,11 +1658,7 @@ local function run(msg, matches)
 			if matches[2] == 'member' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked member ")
 				return lock_group_membermod(msg, data, target)
-			end
-		      --[[  if matches[2]:lower() == 'english' or matches[2]:lower() == 'en' then
-				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked english ")
-				return lock_group_english(msg, data, target)
-			end]]
+			end		    
 			if matches[2]:lower() == 'rtl' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked rtl chars. in names")
 				return lock_group_rtl(msg, data, target)
@@ -1739,11 +1702,7 @@ local function run(msg, matches)
 			if matches[2] == 'member' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked member ")
 				return unlock_group_membermod(msg, data, target)
-			end
-                       --[[ if matches[2]:lower() == 'english' or matches[2]:lower() == 'en' then
-				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked english ")
-				return unlock_group_english(msg, data, target)
-			end]]
+			end                   
 			if matches[2]:lower() == 'rtl' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked RTL chars. in names")
 				return unlock_group_rtl(msg, data, target)
