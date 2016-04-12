@@ -288,7 +288,7 @@ local function unlock_group_arabic(msg, data, target)
   end
 end
 
-local function lock_group_english(msg, data, target)
+--[[local function lock_group_english(msg, data, target)
   if not is_momod(msg) then
     return
   end
@@ -314,7 +314,7 @@ local function unlock_group_english(msg, data, target)
     save_data(_config.moderation.data, data)
     return 'english has been unlocked'
   end
-end
+end]]
 
 local function lock_group_membermod(msg, data, target)
   if not is_momod(msg) then
@@ -578,11 +578,11 @@ function show_supergroup_settingsmod(msg, target)
 		end
 	end
 
-      if data[tostring(target)]['settings'] then
+     --[[ if data[tostring(target)]['settings'] then
 		if not data[tostring(target)]['settings']['antien'] then
 			data[tostring(target)]['settings']['antien'] = 'no'
 		end
-	end
+	end]]
 	if data[tostring(target)]['settings'] then
 		if not data[tostring(target)]['settings']['lock_member'] then
 			data[tostring(target)]['settings']['lock_member'] = 'no'
@@ -591,7 +591,7 @@ function show_supergroup_settingsmod(msg, target)
   local gp_type = data[tostring(msg.to.id)]['group_type']
   
   local settings = data[tostring(target)]['settings']
-  local text = "⚙SuperGroup settings⚙:\n____________________\n>Lock links : "..settings.lock_link.."\n>Lock flood: "..settings.flood.."\n>Flood sensitivity : "..NUM_MSG_MAX.."\n>Lock spam: "..settings.lock_spam.."\n>Lock Arabic: "..settings.lock_arabic.."\n>Lock Member: "..settings.lock_member.."\n>Lock RTL: "..settings.lock_rtl.."\n>Lock english: "..settings.antien.."\n>Lock Tgservice: "..settings.lock_tgservice.."\n>Lock sticker: "..settings.lock_sticker.."\n>group type: "..gp_type.."\n>Public: "..settings.public.."\n>Strict settings: "..settings.strict.."\n____________________\n>>bot version : v2.9<<\n>>>👑MeGa shield👑<<<\n>>@shieldTM<<"
+  local text = "⚙SuperGroup settings⚙:\n____________________\n>Lock links : "..settings.lock_link.."\n>Lock flood: "..settings.flood.."\n>Flood sensitivity : "..NUM_MSG_MAX.."\n>Lock spam: "..settings.lock_spam.."\n>Lock Arabic: "..settings.lock_arabic.."\n>Lock Member: "..settings.lock_member.."\n>Lock RTL: "..settings.lock_rtl.."\n>Lock Tgservice: "..settings.lock_tgservice.."\n>Lock sticker: "..settings.lock_sticker.."\n>group type: "..gp_type.."\n>Public: "..settings.public.."\n>Strict settings: "..settings.strict.."\n____________________\n>>bot version : v2.9<<\n>>>👑MeGa shield👑<<<\n>>@shieldTM<<"
   return text
 end
 
@@ -1692,10 +1692,10 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked member ")
 				return lock_group_membermod(msg, data, target)
 			end
-		        if matches[2]:lower() == 'english' or matches[2]:lower() == 'en' then
+		      --[[  if matches[2]:lower() == 'english' or matches[2]:lower() == 'en' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked english ")
 				return lock_group_english(msg, data, target)
-			end
+			end]]
 			if matches[2]:lower() == 'rtl' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] locked rtl chars. in names")
 				return lock_group_rtl(msg, data, target)
@@ -1740,10 +1740,10 @@ local function run(msg, matches)
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked member ")
 				return unlock_group_membermod(msg, data, target)
 			end
-                        if matches[2]:lower() == 'english' or matches[2]:lower() == 'en' then
+                       --[[ if matches[2]:lower() == 'english' or matches[2]:lower() == 'en' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked english ")
 				return unlock_group_english(msg, data, target)
-			end
+			end]]
 			if matches[2]:lower() == 'rtl' then
 				savelog(msg.to.id, name_log.." ["..msg.from.id.."] unlocked RTL chars. in names")
 				return unlock_group_rtl(msg, data, target)
