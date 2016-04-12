@@ -26,8 +26,8 @@ local function check_member_super(cb_extra, success, result)
 		  member = 'no',
 		  public = 'no',
 		  lock_rtl = 'no',
-                  antien = 'no'
-		  lock_tgservice = 'yes',
+                  antien = 'no'‚
+                  lock_tgservice = 'no'‚
 		  lock_contacts = 'no',
 		  strict = 'no'
         }
