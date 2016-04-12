@@ -25,8 +25,7 @@ local function check_member_super(cb_extra, success, result)
 		  lock_sticker = 'no',
 		  member = 'no',
 		  public = 'no',
-		  lock_rtl = 'no',
-                  antien = 'no'‚
+		  lock_rtl = 'no'‚
                   lock_tgservice = 'no'‚
 		  lock_contacts = 'no',
 		  strict = 'no'
