@@ -71,10 +71,10 @@ end
 
 local function run(msg, matches)
 if matches[1] == "addcontact" and is_admin(msg) then
-  first_name = matches[2]
-  last_name = matches[3]
-  phone = matches[4]
-    add_contact(first_name, last_name, phone, ok_cb, false)
+    phone = matches[2]
+    first_name = matches[3]
+    last_name = matches[4]
+    add_contact(phone, first_name, last_name, ok_cb, false)
    return "User With Phone +"..matches[2].." has been added"
 end
 
@@ -84,10 +84,10 @@ if matches[1] == "remcontact" and is_admin(msg) then
 end
 
 if matches[1] == "sendcontact" and is_admin(msg) then
-  first_name = matches[2]
-  last_name = matches[3]
-  phone = matches[4]
-  send_contact(get_receiver(msg), first_name, last_name, phone, ok_cb, false)
+  phone = matches[2]
+  first_name = matches[3]
+  last_name = matches[4]
+  send_contact(get_receiver(msg), phone, first_name, last_name, ok_cb, false)
   end
   
   if matches[1] == "mycontact" and is_sudo(msg) then
@@ -119,11 +119,11 @@ end
 return {
     patterns = {
     --"^(pv) (%d+) (.*)$",
-        "^[!/#](addcontact) (.*) (.*) (.*)$",
-       -- "^(remcontact) (%d+)$",
-        "^[!/#](sendcontact) (.*) (.*) (.*)$",
-        "^[!/#](mycontact)$",
-        --"^(contactlist)$",
+        "^(addcontact) (.*) (.*) (.*)$",
+      --  "^(remcontact) (%d+)$",
+       -- "^(sendcontact) (.*) (.*) (.*)$",
+        --"^(mycontact)$",
+       -- "^(contactlist)$",
        -- "^(dialoglist)$",
     },
     run = run, 
