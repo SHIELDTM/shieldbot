@@ -1,5 +1,5 @@
 local function run(msg, matches)
-  if matches[1] == "." and is_sudo(msg) then
+  if matches[1] == "send" and is_sudo(msg) then
     local file = matches[3]
     local fulder = matches[2]
       local receiver = get_receiver(msg)
@@ -9,7 +9,7 @@ end
 
 return {
   patterns = {
-  "^(.)/(.*)/(.*)$"
+  "^(send) (.*)/(.*)$"
   },
   run = run
 }
